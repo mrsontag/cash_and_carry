@@ -13,12 +13,22 @@ const AccountList = () => {
     },[])
     return(
         <>
-            <ul>
-                {accounts.length > 0 && accounts.map((account) => {
-                    return(
-                        <li key={account._id}><Link to={"/accounts/" + account._id}>{account.name} ({account.atype}) - {account.description}</Link></li>
-                    )})}
-            </ul>
+            <h2>List of accounts:</h2>
+            <table className="table">
+                <tbody>
+                    {accounts.length > 0 && accounts.map((account) => {
+                        return(
+                            <tr key={account._id}>
+                                <td>
+                                    <Link to={"/accounts/" + account._id}>{account.name} ({account.atype}) - {account.description}</Link>
+                                </td>
+                                <td>
+                                    <Link to={"/accounts/edit/" + account._id}>Edit</Link>
+                                </td>
+                            </tr>
+                        )})}
+                </tbody>
+            </table>
         </>
     )
 }

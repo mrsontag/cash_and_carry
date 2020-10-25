@@ -2,7 +2,8 @@ import React from 'react';
 import Main from './components/main';
 import './App.css';
 import { Router } from '@reach/router';
-import AccountDetails from './components/account_details';
+import AccountForm from './components/account_form';
+import AccountTransactions from './components/account_details';
 import TransactionDetails from './components/transaction_details';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <Router>
         <Main path="/" />
-        <AccountDetails path="/accounts/:id" />
+        <AccountTransactions path="/accounts/:id" />
+        <AccountForm path="/accounts/edit/:id" />
         <TransactionDetails path="/transactions/:id" />
       </Router>
       
